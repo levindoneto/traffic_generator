@@ -17,6 +17,7 @@ def main(args):
     arg = options.getArgs(args)
     if (arg != -1):
         print("UDP traffic generator: ", arg)
+        udp.sendData(arg["ip"], arg["port"], arg["bandwidth"])
 
 if __name__ == '__main__':
     main(sys.argv)
