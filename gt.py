@@ -1,6 +1,6 @@
 '''
 Usage:
-  gt –i destinationIp –p port -r bandwidth”
+  python gt.py –i destinationIp –p port -r bandwidth”
 Options:
   - i String  The IP to send the datagram to
   - p Integer The port of the communication
