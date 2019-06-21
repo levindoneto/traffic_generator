@@ -14,7 +14,9 @@ import shell.options as options
 import sys
 
 def main(args):
-    print("UDP traffic generator")
+    arg = options.getArgs(args)
+    if (arg != -1):
+        print("UDP traffic generator: ", arg)
 
 if __name__ == '__main__':
     main(sys.argv)
