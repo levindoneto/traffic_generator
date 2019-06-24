@@ -23,14 +23,14 @@ def sendData(ip, port, bandwidth):
     import socket
     import time
 
-    timeToSend = getSizeBufferBytes() * 1000/ bandwidth
+    timeToSend = getSizeBufferBits() *1000/ bandwidth
 
+    import os
+    data = os.urandom(1209) # 10000bits
     # Create UDP socket - IPv4
     clientSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
     print("Start sending data over UDP...")
     while (True):
-        clientSock.sendto("dataToSend".encode(), (ip, port))
+        clientSock.sendto(data, (ip, port))
         time.sleep(timeToSend/1000000.0)
-
-    print(timeToSend)
